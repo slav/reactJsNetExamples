@@ -1,0 +1,7 @@
+{
+	"expose": [{
+		"require": "react",
+		"expose": "React"
+		}, 
+		"superagent", "markdown"]
+	}

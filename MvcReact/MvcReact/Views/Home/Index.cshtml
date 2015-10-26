@@ -1,0 +1,16 @@
+﻿@using System.Web.Optimization
+@using MvcReact.Views.Home
+@model IEnumerable< CommentModel >
+<html>
+<head>
+	<title>Hello React</title>
+</head>
+<body>
+<a href="@Url.Action( "Index", "Test" )">Test With Another Component</a>
+@Scripts.Render( "~/bundles/lib" )
+@Scripts.Render( "~/Scripts/dist/Comments/CommentBox.js" )
+
+@Html.React( "CommentBox", new { initialData = Model, pollInterval = 2000, url = Url.Action( "Comments" ), submitUrl = Url.Action( "AddComment" ) } )
+@Html.ReactInitJavaScript()
+</body>
+</html>
